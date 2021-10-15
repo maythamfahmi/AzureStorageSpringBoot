@@ -11,8 +11,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 
 public class BlobStorageService implements IBlobStorageService {
-    private BlobContainerClient blobContainerClient;
-    private BlobServiceClient blobServiceClient;
+    private final BlobContainerClient blobContainerClient;
+    private final BlobServiceClient blobServiceClient;
 
     public BlobStorageService(String connStr, String containerName) {
         blobServiceClient = new BlobServiceClientBuilder().connectionString(connStr).buildClient();

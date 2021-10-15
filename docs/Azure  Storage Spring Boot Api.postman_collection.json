@@ -14,7 +14,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{localhost}}/api/blobservice/list",
+							"raw": "{{localhost}}/api/customizedblobservice/list",
 							"host": [
 								"{{localhost}}"
 							],
@@ -43,7 +43,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{localhost}}/api/blobservice/upload",
+							"raw": "{{localhost}}/api/customizedblobservice/upload",
 							"host": [
 								"{{localhost}}"
 							],
@@ -72,7 +72,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{localhost}}/api/blobservice/uploadFromPath",
+							"raw": "{{localhost}}/api/customizedblobservice/uploadFromPath",
 							"host": [
 								"{{localhost}}"
 							],
@@ -101,7 +101,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{localhost}}/api/blobservice/delete",
+							"raw": "{{localhost}}/api/customizedblobservice/delete",
 							"host": [
 								"{{localhost}}"
 							],
@@ -135,7 +135,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{localhost}}/api/blobservice/download",
+							"raw": "{{localhost}}/api/customizedblobservice/download",
 							"host": [
 								"{{localhost}}"
 							],
@@ -168,7 +168,7 @@
 							"raw": "new message"
 						},
 						"url": {
-							"raw": "{{localhost}}/api/blob/writeBlobFile",
+							"raw": "{{localhost}}/api/simpleblob/writeBlobFile",
 							"host": [
 								"{{localhost}}"
 							],
@@ -187,7 +187,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{localhost}}/api/blob/readBlobFile",
+							"raw": "{{localhost}}/api/simpleblob/readBlobFile",
 							"host": [
 								"{{localhost}}"
 							],
