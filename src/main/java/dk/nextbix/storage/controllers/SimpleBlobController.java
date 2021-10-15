@@ -11,10 +11,9 @@ import java.io.OutputStream;
 import java.nio.charset.Charset;
 
 @RestController
-@RequestMapping("api/blob")
-public class BlobController {
+@RequestMapping("api/simpleblob")
+public class SimpleBlobController {
 
-    //@Value("azure-blob://<your-container-name>/<your-blob-name>")
     @Value("azure-blob://${azure.storage.container}/file.jpg")
     private Resource blobFile;
 
