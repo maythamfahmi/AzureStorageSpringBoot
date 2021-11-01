@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "c7e014ca-e627-413c-a370-2f7f53f84705",
+		"_postman_id": "f3fa91a6-177f-4cab-9234-aeb651c04957",
 		"name": "Azure  Storage Spring Boot Api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "BlobServiceontroller",
+			"name": "BlobServiceController",
 			"item": [
 				{
 					"name": "List Files in Blob",
@@ -14,13 +14,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{localhost}}/api/customizedblobservice/list",
+							"raw": "{{localhost}}/api/BlobService/list",
 							"host": [
 								"{{localhost}}"
 							],
 							"path": [
 								"api",
-								"blobservice",
+								"BlobService",
 								"list"
 							]
 						}
@@ -43,13 +43,13 @@
 							]
 						},
 						"url": {
-							"raw": "{{localhost}}/api/customizedblobservice/upload",
+							"raw": "{{localhost}}/api/BlobService/upload",
 							"host": [
 								"{{localhost}}"
 							],
 							"path": [
 								"api",
-								"blobservice",
+								"BlobService",
 								"upload"
 							]
 						}
@@ -72,13 +72,13 @@
 							]
 						},
 						"url": {
-							"raw": "{{localhost}}/api/customizedblobservice/uploadFromPath",
+							"raw": "{{localhost}}/api/BlobService/uploadFromPath",
 							"host": [
 								"{{localhost}}"
 							],
 							"path": [
 								"api",
-								"blobservice",
+								"BlobService",
 								"uploadFromPath"
 							]
 						}
@@ -101,13 +101,13 @@
 							]
 						},
 						"url": {
-							"raw": "{{localhost}}/api/customizedblobservice/delete",
+							"raw": "{{localhost}}/api/BlobService/delete",
 							"host": [
 								"{{localhost}}"
 							],
 							"path": [
 								"api",
-								"blobservice",
+								"BlobService",
 								"delete"
 							]
 						}
@@ -135,13 +135,13 @@
 							]
 						},
 						"url": {
-							"raw": "{{localhost}}/api/customizedblobservice/download",
+							"raw": "{{localhost}}/api/BlobService/download",
 							"host": [
 								"{{localhost}}"
 							],
 							"path": [
 								"api",
-								"blobservice",
+								"BlobService",
 								"download"
 							]
 						}
@@ -151,50 +151,143 @@
 			]
 		},
 		{
-			"name": "BlobController",
+			"name": "BlobClientController",
 			"item": [
 				{
-					"name": "Write Blob File",
+					"name": "List Files in Blob",
 					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "text/plain"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "new message"
-						},
+						"method": "GET",
+						"header": [],
 						"url": {
-							"raw": "{{localhost}}/api/simpleblob/writeBlobFile",
+							"raw": "{{localhost}}/api/BlobClient/list",
 							"host": [
 								"{{localhost}}"
 							],
 							"path": [
 								"api",
-								"blob",
-								"writeBlobFile"
+								"BlobClient",
+								"list"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Read Blob File",
+					"name": "Upload file",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/SpringBoot/upload/download.png"
+								}
+							]
+						},
 						"url": {
-							"raw": "{{localhost}}/api/simpleblob/readBlobFile",
+							"raw": "{{localhost}}/api/BlobClient/upload",
 							"host": [
 								"{{localhost}}"
 							],
 							"path": [
 								"api",
-								"blob",
-								"readBlobFile"
+								"BlobClient",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload file from Path",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"value": "C:\\SpringBoot\\upload\\download.png",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/BlobClient/uploadFromPath",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"BlobClient",
+								"uploadFromPath"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete blob",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"value": "download.png",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/BlobClient/delete",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"BlobClient",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Downoad blob",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"value": "download.png",
+									"type": "text"
+								},
+								{
+									"key": "targetPath",
+									"value": "C:\\SpringBoot\\download\\",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/BlobClient/download",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"BlobClient",
+								"download"
 							]
 						}
 					},
