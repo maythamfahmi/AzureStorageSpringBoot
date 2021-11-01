@@ -15,12 +15,12 @@ import java.io.File;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("api/customizedblobservice")
-public class CustomizedBlobServiceController {
+@RequestMapping("api/BlobService")
+public class BlobServiceController {
 
     private final IBlobStorageService service;
 
-    public CustomizedBlobServiceController(ApplicationContext applicationContext) {
+    public BlobServiceController(ApplicationContext applicationContext) {
         this.service = applicationContext.getBean(BlobStorageService.class);
     }
 
