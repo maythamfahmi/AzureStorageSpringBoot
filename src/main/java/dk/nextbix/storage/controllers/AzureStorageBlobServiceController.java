@@ -25,6 +25,11 @@ public class AzureStorageBlobServiceController {
         this.service.GetOrCreateContainer(CONTAINER_NAME);
     }
 
+    @GetMapping(path = "ping", produces = MediaType.TEXT_PLAIN_VALUE)
+    public String ping(){
+        return "pong";
+    }
+
     @GetMapping(path = "/list", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Object> listBlobFiles() {
