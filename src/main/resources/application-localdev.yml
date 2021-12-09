@@ -1,3 +1,9 @@
+management:
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+
 azure:
   storage:
     account-name: devstoreaccount1

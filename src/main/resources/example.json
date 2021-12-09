@@ -1,0 +1,25 @@
+{
+  "status": "UP",
+  "components": {
+    "blobStorage": {
+      "status": "UP",
+      "details": {
+        "URL": "http://127.0.0.1:10000/devstoreaccount1",
+        "AccountName": "devstoreaccount1",
+        "Container": "data"
+      }
+    },
+    "diskSpace": {
+      "status": "UP",
+      "details": {
+        "total": 2000381014016,
+        "free": 848988786688,
+        "threshold": 10485760,
+        "exists": true
+      }
+    },
+    "ping": {
+      "status": "UP"
+    }
+  }
+}
