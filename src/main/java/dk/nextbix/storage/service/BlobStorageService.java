@@ -81,8 +81,11 @@ public class BlobStorageService implements IBlobStorageService {
         }
     }
 
-    public PagedIterable<BlobItem> ListBlobs(String containerName) {
-        PagedIterable<BlobItem> blobItems = blobServiceClient.getBlobContainerClient(containerName).listBlobs();
+    public PagedIterable<BlobItem> ListBlobs(String container) {
+
+        PagedIterable<BlobItem> blobItems = blobServiceClient
+                .getBlobContainerClient(container)
+                .listBlobs();
         return blobItems;
     }
 
